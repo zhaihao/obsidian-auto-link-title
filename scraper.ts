@@ -24,6 +24,18 @@ async function scrape(url: string): Promise<string> {
         return noTitle
       }
 
+      // @ts-ignore
+      const ogTitle = doc.querySelector("meta[property='og:title']")?.content
+      if(notBlank(ogTitle)) {
+        return ogTitle
+      }
+
+      // @ts-ignore
+      const twitterTitle = doc.querySelector("meta[property='twitter:title']")?.content
+      if(notBlank(twitterTitle)) {
+        return twitterTitle
+      }
+
       // Otherwise if the site has no title/requires javascript simply return Title Unknown
       return url
     }

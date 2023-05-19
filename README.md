@@ -1,4 +1,9 @@
 ## Obsidian Auto Link Title
+
+```shell
+git remote add upstream git@github.com:zolrath/obsidian-auto-link-title.git
+```
+
 ![Auto linking example](auto-link-title.gif)
 
 ### Automatically Title New Links
